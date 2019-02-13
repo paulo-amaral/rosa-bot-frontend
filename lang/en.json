@@ -24,5 +24,9 @@
     "username": "Username",
     "vitima": "Victim",
     "id": "Id",
-    "complaint": "Complaint"
+    "complaint": "Complaint",
+    "actions": "ações",
+    "view": "visualizar",
+    "edit": "alterar",
+    "loading": "loading"
 }

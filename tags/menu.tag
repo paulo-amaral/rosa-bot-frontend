@@ -11,9 +11,10 @@
             </div>
         </section>
         <section class="navbar-section">
-            <button class="btn btn-link { lang == 'pt-BR' ? 'text-primary' : 'text-secondary' }" data-lang="pt-BR"
+            <button class="btn btn-link { lang == 'pt-BR' ? 'text-primary' : 'text-gray' }" data-lang="pt-BR"
                 onclick="{ setLang }">Pt-Br</button>
-            <button class="btn btn-link { lang == 'en' ? 'text-primary' : 'text-secondary' }" data-lang="en" onclick="{ setLang }">En</button>
+            <span>|</span>
+            <button class="btn btn-link { lang == 'en' ? 'text-primary' : 'text-gray' }" data-lang="en" onclick="{ setLang }">En</button>
         </section>
     </header>
 
@@ -23,7 +24,7 @@
         tag.setLang = setLang;
 
         function setLang(event) {
-            i18nInit(event.target.dataset.lang);
+            i18n.init(event.target.dataset.lang);
             window.location.reload();
         }
     </script>

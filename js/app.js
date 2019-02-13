@@ -8,6 +8,6 @@ var APP = {
 };
 
 
-i18nInit(APP.lang);
+i18n.init(APP.lang);
 
 riot.mount('*');
