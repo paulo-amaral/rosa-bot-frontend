@@ -75,7 +75,7 @@
             var term = tag.refs.search.value;
 
             if (term) {
-                requestApi(APP.getApiUrl('/complaint/search?search=' + term));
+                requestApi(APP.getApiUrl('complaint/search?search=' + term));
             }
         }
 
