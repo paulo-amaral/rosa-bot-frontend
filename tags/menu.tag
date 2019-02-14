@@ -11,8 +11,9 @@
             </div>
         </section>
         <section class="navbar-section">
-            <button class="btn btn-link { lang == 'pt-BR' ? 'text-primary' : 'text-gray' }" data-lang="pt-BR"
-                onclick="{ setLang }">Pt-Br</button>
+            <button class="btn btn-link { lang == 'te' ? 'text-primary' : 'text-gray' }" data-lang="te" onclick="{ setLang }">Te</button>
+            <span>|</span>
+            <button class="btn btn-link { lang == 'pt' ? 'text-primary' : 'text-gray' }" data-lang="pt" onclick="{ setLang }">Pt</button>
             <span>|</span>
             <button class="btn btn-link { lang == 'en' ? 'text-primary' : 'text-gray' }" data-lang="en" onclick="{ setLang }">En</button>
         </section>

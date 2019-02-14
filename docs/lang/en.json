@@ -28,5 +28,6 @@
     "actions": "ações",
     "view": "visualizar",
     "edit": "alterar",
-    "loading": "loading"
+    "loading": "loading",
+    "not_records_found": "not_records_found"
 }

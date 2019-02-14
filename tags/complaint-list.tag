@@ -1,13 +1,15 @@
-<complaint-list>    
+<complaint-list>
     <div class="columns">
         <div class="column col-4">
-            <div class="input-group">
-                <input class="form-input" type="text" placeholder="{ _t('search') }">
-                <button class="btn btn-secondary input-group-btn">
-                    <i class="icon icon-search"></i>
-                    { _t('search') }
-                </button>
-            </div>
+            <form onsubmit="{ onSearch }">
+                <div class="input-group">
+                    <input class="form-input" ref="search" name="search" type="text" placeholder="{ _t('search') }">
+                    <button class="btn btn-secondary input-group-btn">
+                        <i class="icon icon-search"></i>
+                        { _t('search') }
+                    </button>
+                </div>
+            </form>
         </div>
         <div class="column col-8">
             <a class="btn btn-secondary float-right" href="{ APP.getApiUrl('complaint/csv') }">
@@ -22,22 +24,27 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr class="bg-secondary">
-                        <th class="col-1">{ _t("id") }</th>
-                        <th class="col-2">{ _t("username") }</th>
-                        <th class="col-2">{ _t("dataassedio") }</th>
-                        <th class="col-2">{ _t("vitima") }</th>
-                        <th class="col-2">{ _t("id") }</th>
-                        <th class="col-2">{ _t("id") }</th>
-                        <th class="col-1">{ _t("actions") }</th>
+                        <th class="col-1 text-capitalize">{ _t("id") }</th>
+                        <th class="col-2 text-capitalize">{ _t("username") }</th>
+                        <th class="col-2 text-capitalize">{ _t("dataassedio") }</th>
+                        <th class="col-2 text-capitalize">{ _t("vitima") }</th>
+                        <th class="col-2 text-capitalize">{ _t("id") }</th>
+                        <th class="col-2 text-capitalize">{ _t("id") }</th>
+                        <th class="col-1 text-capitalize">{ _t("actions") }</th>
                     </tr>
                 </thead>
-                <tbody> 
-                    <tr if="{ items.length <= 0 }">
+                <tbody>
+                    <tr if="{ loading}">
                         <td colspan="7">
                             <div class="loading loading-lg"></div>
                         </td>
                     </tr>
-                    <tr if="{ items.length > 0 }" each="{ item in items }">
+                    <tr if="{ !loading && items.length <= 0 }">
+                        <td colspan="7">
+                            { _t("not_records_found") }
+                        </td>
+                    </tr>
+                    <tr if="{ !loading && items.length > 0 }" each="{ item in items }">
                         <td>{ item._id }</td>
                         <td>{ item.username }</td>
                         <td>{ item.dataassedio }</td>
@@ -48,20 +55,39 @@
                     </tr>
                 </tbody>
             </table>
-            <pagination></pagination>            
+            <pagination></pagination>
         </div>
     </div>
 
     <script>
-        var tag = this;        
+        var tag = this;
+        tag.loading = false;
         tag.items = opts.items || [];
+        tag.onSearch = onSearch;
         tag.on('mount', onMount);
 
-        function onMount()
-        {   
-            Request.get(opts.api, function (json) {
-                console.log(json);
-                tag.update({'items': json.items});
+        function onMount() {
+            requestApi(opts.api);
+        }
+
+        function onSearch(event) {
+            event.preventDefault();
+            var term = tag.refs.search.value;
+
+            if (term) {
+                requestApi(APP.getApiUrl('/complaint/search?search=' + term));
+            }
+        }
+
+        function requestApi(url) {
+            tag.update({
+                'loading': true
+            });
+            Request.get(url, function (json) {
+                tag.update({
+                    'items': json.items,
+                    'loading': false
+                });
                 riot.mount('pagination', json);
             });
         }

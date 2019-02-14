@@ -1,4 +1,4 @@
-window.i18n = {
+window.i18n = {    
     jsonDictionary: {},
     init: function (lang) {
         var getUrl = window.location;
