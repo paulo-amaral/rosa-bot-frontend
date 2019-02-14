@@ -28,8 +28,8 @@
                         <th class="col-2 text-capitalize">{ _t("username") }</th>
                         <th class="col-2 text-capitalize">{ _t("dataassedio") }</th>
                         <th class="col-2 text-capitalize">{ _t("vitima") }</th>
-                        <th class="col-2 text-capitalize">{ _t("id") }</th>
-                        <th class="col-2 text-capitalize">{ _t("id") }</th>
+                        <th class="col-2 text-capitalize">{ _t("observacao") }</th>
+                        <th class="col-2 text-capitalize">{ _t("status") }</th>
                         <th class="col-1 text-capitalize">{ _t("actions") }</th>
                     </tr>
                 </thead>
@@ -73,10 +73,7 @@
         function onSearch(event) {
             event.preventDefault();
             var term = tag.refs.search.value;
-
-            if (term) {
-                requestApi(APP.getApiUrl('complaint/search?search=' + term));
-            }
+            requestApi(APP.getApiUrl('complaint/search?search=' + term));
         }
 
         function requestApi(url) {

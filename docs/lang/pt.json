@@ -29,5 +29,6 @@
     "view": "visualizar",
     "edit": "alterar",
     "loading": "carregando",
-    "not_records_found": "nenhum registro encontrado"
+    "not_records_found": "nenhum registro encontrado",
+    "observacao": "Observação"
 }

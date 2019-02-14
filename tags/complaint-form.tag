@@ -1,6 +1,5 @@
 <complaint-form>
-    <form method="POST" class="form-horizontal">
-
+    <form onsubmit="{ onSubmit }" class="form-horizontal">
         <div class="card" if="{ Object.keys(data).length > 0 }">
             <div class="card-header">
                 <div class="float-left">
@@ -8,8 +7,8 @@
                     <div class="card-subtitle text-gray">{ _t('datassedio') }</div>
                 </div>
                 <div class="float-right">
-                    <a class="btn btn-link mr-1" href="/#"><i class="icon icon-back"></i> Back</a>
-                    <a class="btn btn-secondary mr-1" href="/"><i class="icon icon-edit"></i> Edit</a>
+                    <a class="btn btn-link mr-1 text-capitalize" href="/#"><i class="icon icon-back"></i> { _t('back') }</a>
+                    <button type="submit" class="btn btn-secondary mr-1 text-capitalize" href="/"><i class="icon icon-edit"></i> { _t('edit') }</button>
                 </div>
             </div>
             <div class="card-body">
@@ -162,9 +161,10 @@
                     <div class="column col-2 col-md-12">
                         <div class="form-group">
                             <label class="form-label text-capitalize" for="observacoes">{ _t('status') }</label>
-                            <select class="form-select">
-                                <option value="">Pendente</option>
-                                <option value="">Resolvido</option>
+                            <select class="form-select" name="status" ref="status">
+                                <option value="aberto" { data=='aberto' ? 'selected' : '' }>Aberto</option>
+                                <option value="fechado" { data=='fechado' ? 'selected' : '' }>Fechado</option>
+                                <option value="arquivo" { data=='arquivo' ? 'selected' : '' }>Arquivo</option>
                             </select>
                         </div>
                     </div>
@@ -172,14 +172,29 @@
                 <div class="columns">
                     <div class="column col-12 col-md-12">
                         <div class="form-group">
-                            <label class="form-label text-capitalize" for="observacoes">{ _t('obs') }</label>
-                            <textarea class="form-input"></textarea>
+                            <label class="form-label text-capitalize" for="observacoes">{ _t('observacao') }</label>
+                            <textarea class="form-input" name="observacao" ref="observacao">{ data.observacao }</textarea>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+
+    <!-- Modal -->
+    <div class="modal modal-sm" ref="modalInfo">
+        <a class="modal-overlay" onclick="{ closeModal }" aria-label="Close"></a>
+        <div class="modal-container">
+            <div class="modal-header">
+                <a onclick="{ closeModal }" class="btn btn-clear float-right" aria-label="Close"></a>
+                <div class="modal-title h5 text-capitalize">{ _t('info') }</div>
+            </div>
+            <div class="modal-body">
+                <div class="content" ref="modalContent">  
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <style>
@@ -193,5 +208,38 @@
     <script>
         var tag = this;
         tag.data = opts.data || {};
+        tag.onSubmit = onSubmit;
+        tag.closeModal = closeModal;
+
+        function closeModal(event)
+        {
+            showModal(false);
+        }
+
+        function showModal(open, message)
+        {
+            if(open){
+                tag.refs.modalInfo.classList.add('active');
+            }
+            else{
+                tag.refs.modalInfo.classList.remove('active');
+            }
+
+            tag.refs.modalContent.innerHTML = message;
+        }
+
+        function onSubmit(event) {
+            event.preventDefault();
+
+            var formData = {
+                'status': tag.refs.status.value,
+                'observacao': tag.refs.observacao.value
+            };
+
+            Request.post(APP.getApiUrl('complaint/update/' + tag.data._id), JSON.stringify(formData), function (json) {
+                console.log(json);
+                showModal(true, 'yes');
+            });
+        }
     </script>
 </complaint-form>
