@@ -237,8 +237,13 @@
             };
 
             Request.post(APP.getApiUrl('complaint/update/' + tag.data._id), JSON.stringify(formData), function (json) {
-                console.log(json);
-                showModal(true, 'yes');
+
+                if(json.error){
+                    showModal(true, json.error);
+                }
+                else{
+                    showModal(true, 'yes');
+                }
             });
         }
     </script>
