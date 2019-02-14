@@ -14,7 +14,7 @@
         <div class="column col-8">
             <a class="btn btn-secondary float-right" href="{ APP.getApiUrl('complaint/csv') }">
                 <i class="icon icon-download"></i>
-                { _t("export_csv") }
+                <span class="text-capitalize">{ _t("export_csv") }</span>
             </a>
         </div>
     </div>
@@ -51,7 +51,7 @@
                         <td>{ item.vitima }</td>
                         <td></td>
                         <td></td>
-                        <td><a href="#view/{ item._id }" class="btn btn-link">{ _t('view') }</a></td>
+                        <td><a href="#view/{ item._id }" class="btn btn-link text-capitalize">{ _t('view') }</a></td>
                     </tr>
                 </tbody>
             </table>

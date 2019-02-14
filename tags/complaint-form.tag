@@ -172,7 +172,7 @@
                 <div class="columns">
                     <div class="column col-12 col-md-12">
                         <div class="form-group">
-                            <label class="form-label" for="observacoes">{ _t('obs') }</label>
+                            <label class="form-label text-capitalize" for="observacoes">{ _t('obs') }</label>
                             <textarea class="form-input"></textarea>
                         </div>
                     </div>

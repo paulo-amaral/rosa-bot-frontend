@@ -6,7 +6,7 @@
                     <img src="img/logo-min.jpeg" alt="logo">
                 </div>
                 <div class="tile-content">
-                    <span class="title text-bold">{ _t("title") }</span>
+                    <span class="title text-capitalize text-bold">{ _t("title") }</span>
                 </div>
             </div>
         </section>
