@@ -16,7 +16,7 @@
                     </button>
                 </li>
                 <li class="page-item ">
-                    <button onclick="{ onNext }" class="btn btn-link text-capitalize { page <= pages ? 'disabled': '' }">
+                    <button onclick="{ onNext }" class="btn btn-link text-capitalize { page >= pages ? 'disabled': '' }">
                         { _t('next') }<i class="icon icon-arrow-right"></i>
                     </button>
                 </li>
