@@ -41,7 +41,7 @@
                     </tr>
                     <tr if="{ !loading && items.length <= 0 }">
                         <td colspan="7">
-                            { _t("not_records_found") }
+                            <span class="text-capitalize">{ _t("not_records_found") }</span>
                         </td>
                     </tr>
                     <tr if="{ !loading && items.length > 0 }" each="{ item in items }">
