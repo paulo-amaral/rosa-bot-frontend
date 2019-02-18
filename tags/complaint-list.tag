@@ -18,7 +18,6 @@
             </a>
         </div>
     </div>
-
     <div class="columns mt-2">
         <div class="column col-12">
             <table class="table table-striped table-hover">
