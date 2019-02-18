@@ -161,10 +161,10 @@
                     <div class="column col-2 col-md-12">
                         <div class="form-group">
                             <label class="form-label text-capitalize" for="observacoes">{ _t('status') }</label>
-                            <select class="form-select" name="status" ref="status">
-                                <option value="aberto" { data=='aberto' ? 'selected' : '' }>Aberto</option>
-                                <option value="fechado" { data=='fechado' ? 'selected' : '' }>Fechado</option>
-                                <option value="arquivo" { data=='arquivo' ? 'selected' : '' }>Arquivo</option>
+                            <select class="form-select" name="status" ref="status" value="{ data.status }">
+                                <option value="aberto" selected="{ data.status == 'aberto' }">Aberto</option>
+                                <option value="fechado" selected="{ data.status == 'fechado' }">Fechado</option>
+                                <option value="arquivo" selected="{ data.status == 'arquivo' }">Arquivo</option>
                             </select>
                         </div>
                     </div>
@@ -242,7 +242,7 @@
                     showModal(true, json.error);
                 }
                 else{
-                    showModal(true, 'yes');
+                    showModal(true, json.status);
                 }
             });
         }

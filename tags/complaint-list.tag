@@ -49,8 +49,8 @@
                         <td>{ item.username }</td>
                         <td>{ item.dataassedio }</td>
                         <td>{ item.vitima }</td>
-                        <td></td>
-                        <td></td>
+                        <td>{ item.observacao }</td>
+                        <td>{ item.status }</td>
                         <td><a href="#view/{ item._id }" class="btn btn-link text-capitalize">{ _t('view') }</a></td>
                     </tr>
                 </tbody>

@@ -30,5 +30,7 @@
     "edit": "edit",
     "loading": "loading",
     "not_records_found": "not records found",
-    "observacao": "note"
+    "observacao": "note",
+    "back": "back",
+    "info": "information"
 }
