@@ -7,158 +7,307 @@
                     <div class="card-subtitle text-gray">{ _t('datassedio') }</div>
                 </div>
                 <div class="float-right">
-                    <a class="btn btn-link mr-1 text-capitalize" href="/#"><i class="icon icon-back"></i> { _t('back') }</a>
-                    <button type="submit" class="btn btn-secondary mr-1 text-capitalize" href="/"><i class="icon icon-edit"></i> { _t('edit') }</button>
+                    <a class="btn btn-link mr-1 text-capitalize" href="/#"><i class="icon icon-back"></i> { _t('back')
+                        }</a>
+                    <button type="submit" class="btn btn-secondary mr-1 text-capitalize" href="/"><i
+                            class="icon icon-edit"></i> { _t('edit') }</button>
                 </div>
             </div>
             <div class="card-body">
+                <fieldset>
+                    <legend>{ _t('about_complaint') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('complaint_number') }</label>
+                                <span>{ data._id }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('date_complaint') }</label>
+                                <span>{ data.dataqueixa }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('complaint_channel') }</label>
+                                <span>{ data.canal }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>{ _t('about_complainant') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('name_complainant') }</label>
+                                <span>{ data.usename }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('gender_complainant') }</label>
+                                <span>{ data.genero }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('age_complainant') }</label>
+                                <span>{ data.idade }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('complainant_telephone') }</label>
+                                <span>{ data.numerotelefone }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('place_residence_complainant') }</label>
+                                <span>{ data.municipio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('profession_complainant') }</label>
+                                <span>{ data.profissao }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('place_work_study') }</label>
+                                <span>{ data.entidadepublica }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('municipality_work_study') }</label>
+                                <span>{ data.municipiotrabalho }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('emotional_state') }</label>
+                                <span>{ data.estmocional }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>{ _t('about_victim') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('victim') }</label>
+                                <span>{ data.vitima }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('victm_name') }</label>
+                                <span>{ data.nomevitima }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('info_victim_whereabouts') }</label>
+                                <span>{ data.encontrarvitima }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('victim_telephone') }</label>
+                                <span>{ data.telefonevitima }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('potential_additional_victims') }</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('identification_additional_victims')
+                                    }</label>
+                                <span>{ data.outrasvitimas }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('other_info_about_victim') }</label>
+                                <span>{ data.infoadicionalvitima }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('impact_harassment') }</label>
+                                <span>{ data.consequencias }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>{ _t('about_aggressor') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('number_aggressors') }</label>
+                                <span>{ data.nrpessoas }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('name_agressor') }</label>
+                                <span>{ data.nomeinfrator }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('aggressor_gender') }</label>
+                                <span>{ data.generoinfrator }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('relationship_aggressor') }</label>
+                                <span>{ data.deondeconhece }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('aggressor_workplace') }</label>
+                                <span>{ data.infratorondetrabalha }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('other_additional_info_aggressor')
+                                    }</label>
+                                <span>{ data.infosobreinfrator }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('info_case_aggressor') }</label>
+                                <span>{ data.infoidentificacainfrator }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>{ _t('about_alleged_sexual_harassment') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('date_harassment') }</label>
+                                <span>{ data.datassedio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('place_harassment') }</label>
+                                <span>{ data.localassedio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('municipality') }</label>
+                                <span>{ data.municipioassedio }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('type_harassment') }</label>
+                                <span>{ data.tipoassedio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('details_specific_action') }</label>
+                                <span>{ data.infratorondetrabalha }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('frequency_offence')
+                                    }</label>
+                                <span>{ data.qtdvezes }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('last_date_harassment') }</label>
+                                <span>{ data.datautimoassedio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('more_info_what_happened') }</label>
+                                <span>{ data.infratorfazianolocal }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('victim_reaction') }</label>
+                                <span>{ data.reacao }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>{ _t('about_witnesses_evidence') }</legend>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('existence_witness') }</label>
+                                <span>{ data.existetestemunha }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('identification_witness') }</label>
+                                <span>{ data.testemunhadoassedio }</span>
+                            </div>
+                        </div>
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('existence_evidence') }</label>
+                                <span>{ data.evidencia }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column col-4 col-md-12">
+                            <div class="form-group">
+                                <label class="form-label text-capitalize">{ _t('delivery_method') }</label>
+                                <span>{ data.gravamedia }</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr>
                 <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('usename') }</label>
-                            <span>{ data.username }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('datassedio') }</label>
-                            <span>{ data.datassedio }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="sexo_pac">{ _t('anoassedio') }</label>
-                            <span>{ data.anoassedio }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_social">{ _t('cidadeassedio') }</label>
-                            <span>{ data.cidadeassedio }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('vitima') }</label>
-                            <span>{ data.vitima }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('genero') }</label>
-                            <span>{ data.genero }</span>
-                        </div>
-                    </div>
-
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_social">{ _t('idade') }</label>
-                            <span>{ data.idade }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="sexo_pac">{ _t('estmocional') }</label>
-                            <span>{ data.estmocional }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('firstName') }</label>
-                            <span>{ data.firstName }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('lastName') }</label>
-                            <span>{ data.lastName }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_social">{ _t('telefone') }</label>
-                            <span>{ data.telefone }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="sexo_pac">{ _t('phone') }</label>
-                            <span>{ data.phone }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('cidadeassedio') }</label>
-                            <span>{ data.cidadeassedio }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('entidadepublica') }</label>
-                            <span>{ data.entidadepublica }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_social">{ _t('municipio') }</label>
-                            <span>{ data.municipio }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="sexo_pac">{ _t('municipiotrabalho') }</label>
-                            <span>{ data.municipiotrabalho }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('nomeagressor') }</label>
-                            <span>{ data.nomeagressor }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('nomeinfrator') }</label>
-                            <span>{ data.nomeinfrator }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_social">{ _t('queixacontra') }</label>
-                            <span>{ data.queixacontra }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="sexo_pac">{ _t('generoinfrator') }</label>
-                            <span>{ data.generoinfrator }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="nome_pac">{ _t('es') }</label>
-                            <span>{ data.es }</span>
-                        </div>
-                    </div>
-                    <div class="column col-3 col-md-12">
-                        <div class="form-group">
-                            <label class="form-label text-capitalize" for="cod_prnt">{ _t('mesassedio') }</label>
-                            <span>{ data.mesassedio }</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column col-2 col-md-12">
+                    <div class="column col-4 col-md-12">
                         <div class="form-group">
                             <label class="form-label text-capitalize" for="observacoes">{ _t('status') }</label>
                             <select class="form-select" name="status" ref="status" value="{ data.status }">
@@ -173,7 +322,8 @@
                     <div class="column col-12 col-md-12">
                         <div class="form-group">
                             <label class="form-label text-capitalize" for="observacoes">{ _t('observacao') }</label>
-                            <textarea class="form-input" name="observacao" ref="observacao">{ data.observacao }</textarea>
+                            <textarea class="form-input" name="observacao"
+                                ref="observacao">{ data.observacao }</textarea>
                         </div>
                     </div>
                 </div>
@@ -190,7 +340,7 @@
                 <div class="modal-title h5 text-capitalize">{ _t('info') }</div>
             </div>
             <div class="modal-body">
-                <div class="content" ref="modalContent">  
+                <div class="content" ref="modalContent">
                 </div>
             </div>
         </div>
@@ -211,17 +361,15 @@
         tag.onSubmit = onSubmit;
         tag.closeModal = closeModal;
 
-        function closeModal(event)
-        {
+        function closeModal(event) {
             showModal(false);
         }
 
-        function showModal(open, message)
-        {
-            if(open){
+        function showModal(open, message) {
+            if (open) {
                 tag.refs.modalInfo.classList.add('active');
             }
-            else{
+            else {
                 tag.refs.modalInfo.classList.remove('active');
             }
 
@@ -238,10 +386,10 @@
 
             Request.post(APP.getApiUrl('complaint/update/' + tag.data._id), JSON.stringify(formData), function (json) {
 
-                if(json.error){
+                if (json.error) {
                     showModal(true, json.error);
                 }
-                else{
+                else {
                     showModal(true, json.status);
                 }
             });

@@ -6,7 +6,6 @@
     background-color: red;
 }
 
-
 .table {
     width: 100%;
 }
@@ -15,6 +14,9 @@
     font-size: 2em;
 }
 
+legend{
+    text-transform: uppercase;
+}
 
 .fade-in {
     animation: fadein 1s;
