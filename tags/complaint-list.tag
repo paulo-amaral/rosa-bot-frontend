@@ -24,10 +24,10 @@
                 <thead>
                     <tr class="bg-secondary">
                         <th class="col-1 text-capitalize">{ _t("id") }</th>
-                        <th class="col-2 text-capitalize">{ _t("username") }</th>
-                        <th class="col-2 text-capitalize">{ _t("dataassedio") }</th>
-                        <th class="col-2 text-capitalize">{ _t("vitima") }</th>
-                        <th class="col-2 text-capitalize">{ _t("observacao") }</th>
+                        <th class="col-2 text-capitalize">{ _t("name") }</th>
+                        <th class="col-2 text-capitalize">{ _t("date_harassment") }</th>
+                        <th class="col-2 text-capitalize">{ _t("victim") }</th>
+                        <th class="col-2 text-capitalize">{ _t("notes") }</th>
                         <th class="col-2 text-capitalize">{ _t("status") }</th>
                         <th class="col-1 text-capitalize">{ _t("actions") }</th>
                     </tr>
@@ -46,7 +46,7 @@
                     <tr if="{ !loading && items.length > 0 }" each="{ item in items }">
                         <td>{ item._id }</td>
                         <td>{ item.username }</td>
-                        <td>{ item.dataassedio }</td>
+                        <td>{ item.datassedio }</td>
                         <td>{ item.vitima }</td>
                         <td>{ item.observacao }</td>
                         <td>{ item.status }</td>

@@ -3,8 +3,7 @@
         <div class="card" if="{ Object.keys(data).length > 0 }">
             <div class="card-header">
                 <div class="float-left">
-                    <div class="card-title text-uppercase"> { _t('complaint') }: #{ data._id } </div>
-                    <div class="card-subtitle text-gray">{ _t('datassedio') }</div>
+                    <div class="card-title text-uppercase"> { _t('complaint') }: <b>#{ data._id }</b> </div>
                 </div>
                 <div class="float-right">
                     <a class="btn btn-link mr-1 text-capitalize" href="/#"><i class="icon icon-back"></i> { _t('back')
