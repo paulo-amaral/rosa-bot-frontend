@@ -320,7 +320,7 @@
                 <div class="columns">
                     <div class="column col-12 col-md-12">
                         <div class="form-group">
-                            <label class="form-label text-capitalize" for="observacoes">{ _t('observacao') }</label>
+                            <label class="form-label text-capitalize" for="observacoes">{ _t('notes') }</label>
                             <textarea class="form-input" name="observacao"
                                 ref="observacao">{ data.observacao }</textarea>
                         </div>

@@ -26,6 +26,7 @@
                         <th class="col-1 text-capitalize">{ _t("id") }</th>
                         <th class="col-2 text-capitalize">{ _t("name") }</th>
                         <th class="col-2 text-capitalize">{ _t("date_harassment") }</th>
+                        <th class="col-2 text-capitalize">{ _t("date_complaint") }</th>
                         <th class="col-2 text-capitalize">{ _t("victim") }</th>
                         <th class="col-2 text-capitalize">{ _t("notes") }</th>
                         <th class="col-2 text-capitalize">{ _t("status") }</th>
@@ -34,12 +35,12 @@
                 </thead>
                 <tbody>
                     <tr if="{ loading}">
-                        <td colspan="7">
+                        <td colspan="8">
                             <div class="loading loading-lg"></div>
                         </td>
                     </tr>
                     <tr if="{ !loading && items.length <= 0 }">
-                        <td colspan="7">
+                        <td colspan="8">
                             <span class="text-capitalize">{ _t("not_records_found") }</span>
                         </td>
                     </tr>
@@ -47,6 +48,7 @@
                         <td>{ item._id }</td>
                         <td>{ item.username }</td>
                         <td>{ item.datassedio }</td>
+                        <td>{ item.dataqueixa }</td>
                         <td>{ item.vitima }</td>
                         <td>{ item.observacao }</td>
                         <td>{ item.status }</td>
