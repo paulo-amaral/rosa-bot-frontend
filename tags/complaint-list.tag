@@ -86,7 +86,21 @@
                     'items': json.items,
                     'loading': false
                 });
-                riot.mount('pagination', json);
+
+                var actions = {
+                    onPrev: function(){
+                        var page = parseInt(json.page) - 1;
+                        var newUrl = APP.getApiUrl('complaint/search?' + '&page=' + page);
+                        return requestApi(newUrl);
+                    },
+                    onNext: function(){
+                        var page = parseInt(json.page) + 1;
+                        var newUrl = APP.getApiUrl('complaint/search?' + '&page=' + page);
+                        return requestApi(newUrl);
+                    }
+                };
+
+                riot.mount('pagination', Object.assign(json, actions));
             });
         }
     </script>
