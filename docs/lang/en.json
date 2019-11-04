@@ -82,6 +82,24 @@
     "agressor_is_civil_servant": "civil servant_agressor",
     "agressor_abuse_authority": "agressor_abuse_authority",
     "agressor_is_boss": "agressor_is_boss",
-    "data_about_harassment": "data_about_harassment"
-
+    "data_about_harassment": "data_about_harassment",
+    "evidence_delivered": "evidence_delivered",
+    "evidence_text": "evidence_text",
+    "data_about_officcer": "data_about_officcer",
+    "profession": "profession",
+    "date": "date",
+    "signature": "signature",
+    "legal_analyst": "legal analyst",
+    "legal_recomendation": "legal_recomendation",
+    "disciplinary_process": "disciplinary_process",
+    "preliminary_investigation": "preliminary_investigation",
+    "info_about": "info_about",
+    "complaint_file": "complaint_file",
+    "complaint_file_text": "complaint_file_text",
+    "proposed_agressor_suspension": "proposed_agressor_suspension",
+    "proposed_agressor_suspension_reason": "proposed_agressor_suspension_reason",
+    "proposed_agressor_suspension_text": "proposed_agressor_suspension_text",
+    "proposed_victim_protection": "proposed_victim_protection",
+    "proposed_victim_protection_reason": "proposed_victim_protection_reason",
+    "data_about_legal_officcer": "data_about_legal_officcer"
 }

@@ -1,17 +1,27 @@
 <complaint-print>
     <script>
         var tag = this;
-        tag.data = opts.data || {};   
+        tag.data = opts.data || {};
         tag.on('mount', onMount);
-        
-        function onMount(){
+
+        function onMount() {
             window.print();
             window.close();
         }
     </script>
+
+    <style>
+        .width-small {
+            width: 120px;
+        }
+
+        .width-medium {
+            width: 200px;
+        }
+    </style>
     <div class="container">
-        <h1 class="text-center text-uppercase">{ _t('title_print') }</h1>
-        <h5 class="text-center text-capitalize">{ _t('subtitle_print') }</h5>
+        <h3 class="text-center text-uppercase">{ _t('title_print') }</h3>
+        <div class="text-center text-bold text-capitalize">{ _t('subtitle_print') }</div>
         <br>
         <div class="mt-2">
             <h4 class="text-capitalize">{ _t('part')} 1: { _t('about_complaint') }</h4>
@@ -21,7 +31,7 @@
                         <td class="text-capitalize bg-gray " colspan="4">A. { _t('data_about_complaint') }</td>
                     </tr>
                     <tr>
-                        <td class="text-capitalize">{ _t('complaint_number') }</td>
+                        <td class="text-capitalize width-medium">{ _t('complaint_number') }</td>
                         <td class="text-bold">{ data._id }</td>
                         <td class="text-capitalize">{ _t('date_complaint') }</td>
                         <td class="text-bold">{ data.dataqueixa }</td>
@@ -36,10 +46,10 @@
             <table class="table table-bordered">
                 <tbody>
                     <tr>
-                        <td class="text-capitalize bg-gray " colspan="6">B. { _t('data_about_complainant') }</td>
+                        <td class="text-capitalize bg-gray" colspan="6">B. { _t('data_about_complainant') }</td>
                     </tr>
                     <tr>
-                        <td class="text-capitalize">{ _t('name_complainant') }</td>
+                        <td class="text-capitalize width-medium">{ _t('name_complainant') }</td>
                         <td class="text-bold">{ data.usename }</td>
                         <td class="text-capitalize">{ _t('gender_complainant') }</td>
                         <td class="text-bold">{ data.genero }</td>
@@ -72,7 +82,7 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('complainant_is_victim') }</td>
-                        <td class="text-bold" colspan="5">{ data.complainant_is_victim }</td>
+                        <td class="text-bold" colspan="5">{ data.tipovitima }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('victim_name') }</td>
@@ -145,9 +155,9 @@
                     <tr>
                         <td class="text-capitalize">{ _t('agressor_is_boss') }</td>
                         <td class="text-bold" colspan="3">{ data.agressor_is_boss }</td>
-                    </tr>       
+                    </tr>
                 </tbody>
-            </table>            
+            </table>
             <br>
             <table class="table table-bordered">
                 <tbody>
@@ -169,14 +179,145 @@
                     <tr>
                         <td class="text-capitalize">{ _t('victim_reaction') }</td>
                         <td class="text-bold" colspan="3">{ data.reacao }</td>
-                    </tr>  
+                    </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('more_info_what_happened') }</td>
                         <td class="text-bold" colspan="3">{ data.infratorfazianolocal }</td>
-                    </tr> 
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('identification_witness') }</td>
+                        <td class="text-bold">{ data.testemunhadoassedio }</td>
+                        <td class="text-capitalize">{ _t('existence_evidence') }</td>
+                        <td class="text-bold">{ data.evidencia }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('evidence_delivered') }</td>
+                        <td class="text-bold" colspan="3">{ data.evidence_delivered }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('evidence_text') }</td>
+                        <td class="text-bold" colspan="3">{ data.evidence_text }</td>
+                    </tr>
                 </tbody>
             </table>
             <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray" colspan="4">E. { _t('data_about_officcer') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('name') }</td>
+                        <td class="text-bold" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('profession') }</td>
+                        <td class="text-bold" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('signature') }</td>
+                        <td class="text-bold"></td>
+                        <td class="text-capitalize">{ _t('date') }</td>
+                        <td class="text-bold"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="page-break"></div>
+            <br>
+            <h4 class="text-capitalize">{ _t('part')} 2: { _t('legal_analyst') }</h4>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray " colspan="4">A. { _t('legal_recomendation') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('disciplinary_process') }</td>
+                        <td class="text-bold" colspan="3">{ data.disciplinary_process }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('preliminary_investigation') }</td>
+                        <td class="text-bold">{ data.preliminary_investigation }</td>
+                        <td class="text-capitalize">{ _t('info_about') }</td>
+                        <td class="text-bold">{ data.info_about }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('complaint_file') }</td>
+                        <td class="text-bold">{ data.complaint_file }</td>
+                        <td class="text-capitalize">{ _t('complaint_file_text') }</td>
+                        <td class="text-bold">{ data.complaint_file_text }</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray" colspan="2">B. { _t('proposed_agressor_suspension') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('proposed_agressor_suspension') }?</td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('proposed_agressor_suspension_reason') }</td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension_reason }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('proposed_agressor_suspension_text') }</td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension_text }</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray" colspan="2">C. { _t('proposed_victim_protection') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('proposed_victim_protection') }?</td>
+                        <td class="text-bold">{ data.proposed_victim_protection }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('proposed_victim_protection_reason') }</td>
+                        <td class="text-bold">{ data.proposed_victim_protection_reason }</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray">D. { _t('note') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ data.note }</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize bg-gray" colspan="4">E. { _t('data_about_legal_officcer') }</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('name') }</td>
+                        <td class="text-bold" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('profession') }</td>
+                        <td class="text-bold" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize">{ _t('signature') }</td>
+                        <td class="text-bold"></td>
+                        <td class="text-capitalize">{ _t('date') }</td>
+                        <td class="text-bold"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </complaint-print>
