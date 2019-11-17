@@ -93,7 +93,7 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('name_complainant') }</label>
-                                <span>{ data.usename }</span>
+                                <span>{ data.username }</span>
                             </div>
                         </div>
                         <div class="column col-4 col-md-12">
@@ -255,7 +255,7 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('info_case_aggressor') }</label>
-                                <span>{ data.infoidentificacainfrator }</span>
+                                <span>{ data.infoidentificainfrator }</span>
                             </div>
                         </div>
                     </div>
@@ -272,13 +272,13 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('place_harassment') }</label>
-                                <span>{ data.localassedio }</span>
+                                <span>{ data.ondefoi }</span>
                             </div>
                         </div>
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('municipality') }</label>
-                                <span>{ data.municipioassedio }</span>
+                                <span>{ data.cidadeassedio }</span>
                             </div>
                         </div>
                     </div>
@@ -292,7 +292,7 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('details_specific_action') }</label>
-                                <span>{ data.infratorondetrabalha }</span>
+                                <span>{ data.partecorpo }</span>
                             </div>
                         </div>
                         <div class="column col-4 col-md-12">
@@ -307,7 +307,7 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('last_date_harassment') }</label>
-                                <span>{ data.datautimoassedio }</span>
+                                <span>{ data.dataultimoassedio }</span>
                             </div>
                         </div>
                         <div class="column col-4 col-md-12">

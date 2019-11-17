@@ -101,22 +101,5 @@
     "proposed_agressor_suspension_text": "proposed_agressor_suspension_text",
     "proposed_victim_protection": "proposed_victim_protection",
     "proposed_victim_protection_reason": "proposed_victim_protection_reason",
-    "data_about_legal_officcer": "data_about_legal_officcer",
-    "description": "descreva",
-    "yes": "yes",
-    "no": "no",
-    "dont_know": "i don't know",
-    "inquired": "inquirido",
-    "facts_lack": "os fatos / a falta",
-    "breach_of_duty": "factos não revelam violação de dever",
-    "procedure_prescription": "prescrição do procedimento",
-    "agressor_dont_under_cfp": "inquirido não está sob a autoridade da CFP",
-    "misuse_rosaboot": "uso indevido do chatbot Rosa",
-    "integrity_effectiveness_investigation": "necessária para garantir a integridade e eficácia da investigação",
-    "protected_victm": "necessária para proteger o/a queixoso/a e/ou vítima",
-    "others": "outros",
-    "bullying": "intimidação por parte do inquirido",
-    "threats": "ameaças de retaliação",
-    "fear": "medo por parte da vítima/queixoso",
-    "hostile_work": "ambiente de trabalho hostil"
+    "data_about_legal_officcer": "data_about_legal_officcer"
 }

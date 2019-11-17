@@ -11,10 +11,6 @@
     </script>
 
     <style>
-        .height-small {
-            min-height: 40px;
-        }
-
         .width-small {
             width: 120px;
         }
@@ -54,7 +50,7 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize width-medium">{ _t('name_complainant') }</td>
-                        <td class="text-bold">{ data.usename }</td>
+                        <td class="text-bold">{ data.username }</td>
                         <td class="text-capitalize">{ _t('gender_complainant') }</td>
                         <td class="text-bold">{ data.genero }</td>
                         <td class="text-capitalize">{ _t('age_complainant') }</td>
@@ -86,7 +82,7 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('complainant_is_victim') }</td>
-                        <td class="text-bold" colspan="5">{ data.vitima }</td>
+                        <td class="text-bold" colspan="5">{ data.tipovitima }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('victim_name') }</td>
@@ -150,21 +146,15 @@
                         <td class="text-capitalize">{ _t('number_aggressors') }</td>
                         <td class="text-bold">{ data.nrpessoas }</td>
                         <td class="text-capitalize">{ _t('info_case_aggressor') }</td>
-                        <td class="text-bold">{ data.infoidentificacainfrator }</td>
+                        <td class="text-bold">{ data.infoidentificainfrator }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('agressor_abuse_authority') }</td>
-                        <td colspan="3">
-                            <options-yes-no></options-yes-no>
-                            <i>{ _t('description') }:</i>
-                            <div class="height-small"></div>
-                        </td>
+                        <td class="text-bold" colspan="3">{ data.agressor_abuse_authority }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('agressor_is_boss') }</td>
-                        <td colspan="3">
-                            <options-yes-no></options-yes-no>
-                        </td>
+                        <td class="text-bold" colspan="3">{ data.agressor_is_boss }</td>
                     </tr>
                 </tbody>
             </table>
@@ -178,17 +168,13 @@
                         <td class="text-capitalize">{ _t('date_harassment') }</td>
                         <td class="text-bold">{ data.qtdvezes }</td>
                         <td class="text-capitalize">{ _t('place_harassment') }</td>
-                        <td class="text-bold">{ data.localassedio }</td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize">{ _t('type_harassment') }</td>
-                        <td class="text-bold" colspan="3">{ data.tipoassedio }</td>
+                        <td class="text-bold">{ data.ondefoi }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('frequency_offence') }</td>
                         <td class="text-bold">{ data.datassedio }</td>
                         <td class="text-capitalize">{ _t('last_date_harassment') }</td>
-                        <td class="text-bold">{ data.utimoassedio }</td>
+                        <td class="text-bold">{ data.dataultimoassedio }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('victim_reaction') }</td>
@@ -206,15 +192,11 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('evidence_delivered') }</td>
-                        <td colspan="3">
-                            <options-yes-no hide_dont_know="true"></options-yes-no>
-                        </td>
+                        <td class="text-bold" colspan="3">{ data.evidence_delivered }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('evidence_text') }</td>
-                        <td class="text-bold" colspan="3">
-                            <div class="height-small"></div>
-                        </td>
+                        <td class="text-bold" colspan="3">{ data.evidence_text }</td>
                     </tr>
                 </tbody>
             </table>
@@ -225,7 +207,7 @@
                         <td class="text-capitalize bg-gray" colspan="4">E. { _t('data_about_officcer') }</td>
                     </tr>
                     <tr>
-                        <td class="text-capitalize width-small">{ _t('name') }</td>
+                        <td class="text-capitalize">{ _t('name') }</td>
                         <td class="text-bold" colspan="3"></td>
                     </tr>
                     <tr>
@@ -235,13 +217,13 @@
                     <tr>
                         <td class="text-capitalize">{ _t('signature') }</td>
                         <td class="text-bold"></td>
-                        <td class="text-capitalize width-small">{ _t('date') }</td>
+                        <td class="text-capitalize">{ _t('date') }</td>
                         <td class="text-bold"></td>
                     </tr>
                 </tbody>
             </table>
             <br>
-            <div class="page-break_"></div>
+            <div class="page-break"></div>
             <br>
             <h4 class="text-capitalize">{ _t('part')} 2: { _t('legal_analyst') }</h4>
             <table class="table table-bordered">
@@ -251,60 +233,19 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('disciplinary_process') }</td>
-                        <td class="text-bold" colspan="3">
-                            <label class="form-checkbox form-inline">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i>
-                            </label>
-                        </td>
+                        <td class="text-bold" colspan="3">{ data.disciplinary_process }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('preliminary_investigation') }</td>
-                        <td class="text-bold">
-                            <label class="form-checkbox form-inline">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i>
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.preliminary_investigation }</td>
                         <td class="text-capitalize">{ _t('info_about') }</td>
-                        <td>
-                            <label class="form-checkbox form-inline">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('inquired') }
-                            </label>
-                            <label class="form-checkbox form-inline">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('facts_lack') }
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.info_about }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('complaint_file') }</td>
-                        <td class="text-bold">
-                            <label class="form-checkbox form-inline">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i>
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.complaint_file }</td>
                         <td class="text-capitalize">{ _t('complaint_file_text') }</td>
-                        <td>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('breach_of_duty') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('procedure_prescription') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('agressor_dont_under_cfp') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('misuse_rosaboot') }
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.complaint_file_text }</td>
                     </tr>
                 </tbody>
             </table>
@@ -316,32 +257,15 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('proposed_agressor_suspension') }?</td>
-                        <td>
-                            <options-yes-no hide_dont_know="true"></options-yes-no>
-                        </td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('proposed_agressor_suspension_reason') }</td>
-                        <td>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('integrity_effectiveness_investigation') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('protected_victm') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('others') }
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension_reason }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('proposed_agressor_suspension_text') }</td>
-                        <td>
-                            <div class="height-small"></div>
-                        </td>
+                        <td class="text-bold">{ data.proposed_agressor_suspension_text }</td>
                     </tr>
                 </tbody>
             </table>
@@ -353,34 +277,11 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('proposed_victim_protection') }?</td>
-                        <td>
-                            <options-yes-no hide_dont_know="true"></options-yes-no>
-                        </td>
+                        <td class="text-bold">{ data.proposed_victim_protection }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('proposed_victim_protection_reason') }</td>
-                        <td>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('bullying') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('threats') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('fear') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('hostile_work') }
-                            </label>
-                            <label class="form-checkbox">
-                                <input type="checkbox" disabled>
-                                <i class="form-icon"></i> { _t('others') }
-                            </label>
-                        </td>
+                        <td class="text-bold">{ data.proposed_victim_protection_reason }</td>
                     </tr>
                 </tbody>
             </table>
@@ -391,9 +292,7 @@
                         <td class="text-capitalize bg-gray">D. { _t('note') }</td>
                     </tr>
                     <tr>
-                        <td class="text-capitalize">
-                            <div class="height-small"></div>
-                        </td>
+                        <td class="text-capitalize">{ data.note }</td>
                     </tr>
                 </tbody>
             </table>
@@ -404,7 +303,7 @@
                         <td class="text-capitalize bg-gray" colspan="4">E. { _t('data_about_legal_officcer') }</td>
                     </tr>
                     <tr>
-                        <td class="text-capitalize width-small">{ _t('name') }</td>
+                        <td class="text-capitalize">{ _t('name') }</td>
                         <td class="text-bold" colspan="3"></td>
                     </tr>
                     <tr>
@@ -414,7 +313,7 @@
                     <tr>
                         <td class="text-capitalize">{ _t('signature') }</td>
                         <td class="text-bold"></td>
-                        <td class="text-capitalize width-small">{ _t('date') }</td>
+                        <td class="text-capitalize">{ _t('date') }</td>
                         <td class="text-bold"></td>
                     </tr>
                 </tbody>
