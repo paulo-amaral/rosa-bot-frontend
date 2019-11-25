@@ -166,13 +166,13 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('date_harassment') }</td>
-                        <td class="text-bold">{ data.qtdvezes }</td>
+                        <td class="text-bold">{ data.datassedio }</td>
                         <td class="text-capitalize">{ _t('place_harassment') }</td>
                         <td class="text-bold">{ data.ondefoi }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('frequency_offence') }</td>
-                        <td class="text-bold">{ data.datassedio }</td>
+                        <td class="text-bold">{ data.qtdvezes }</td>
                         <td class="text-capitalize">{ _t('last_date_harassment') }</td>
                         <td class="text-bold">{ data.dataultimoassedio }</td>
                     </tr>
