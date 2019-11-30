@@ -82,7 +82,7 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('complainant_is_victim') }</td>
-                        <td class="text-bold" colspan="5">{ data.tipovitima }</td>
+                        <td class="text-bold" colspan="5">{ data.queixosovitima }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('victim_name') }</td>
@@ -90,7 +90,7 @@
                         <td class="text-capitalize">{ _t('gender_victim') }</td>
                         <td class="text-bold">{ data.generovitima }</td>
                         <td class="text-capitalize">{ _t('age_victim') }</td>
-                        <td class="text-bold">{ data.idadevitima }</td>
+                        <td class="text-bold">{ data.tipovitima }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('info_victim_whereabouts') }</td>
