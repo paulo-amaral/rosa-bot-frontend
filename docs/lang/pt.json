@@ -66,14 +66,14 @@
     "victim_telephone": "número telefone da vítima",
     "victm_name": "nome da vítima",
     "view": "visualizar",
-    "print": "print",
+    "print": "imprimir",
     "title_print": "ficha de apuramento",
     "subtitle_print": "Com base no Roteiro e na Orientação número 12/2017, de 9 de Agosto, da Comissão da Função Pública (CFP)",
     "part": "parte",
     "data_about_complaint": "dados relativos a queixa",
     "data_about_complainant": "dados relativos ao queixoso e/ou vitima",
     "facebook_profile": "facebook profile",
-    "pmsi_number": "número do PMSI",
+    "pmsi_number": "número do SIGAP ",
     "complainant_is_victim": "queixoso é a própria vitima",
     "gender_victim": "genero da vítima",
     "age_victim": "idade da vítima",
@@ -103,8 +103,8 @@
     "proposed_victim_protection_reason": "razão que apoie a prosposta para a medida de proteção",
     "data_about_legal_officcer": "membro unidade jurídico que preencheu a ficha de apuramento",
     "description": "descreva",	
-    "yes": "yes",	
-    "no": "no",	
+    "yes": "sim",	
+    "no": "não",	
     "dont_know": "não sabe",	
     "inquired": "inquirido",	
     "facts_lack": "os fatos / a falta",	
@@ -122,4 +122,5 @@
     "category": "categoria",
     "action": "ação",
     "behavior": "comportamento"
+    
 }
