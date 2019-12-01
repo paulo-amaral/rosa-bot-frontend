@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <td class="text-capitalize width-medium">{ _t('name_complainant') }</td>
-                        <td class="text-bold">{ data.username }</td>
+                        <td class="text-bold">{ data.nomevitima }</td>
                         <td class="text-capitalize">{ _t('gender_complainant') }</td>
                         <td class="text-bold">{ data.genero }</td>
                         <td class="text-capitalize">{ _t('age_complainant') }</td>
@@ -185,6 +185,22 @@
                         <td class="text-bold" colspan="3">{ data.tipoassedio }</td>
                     </tr>
                     <tr>
+                        <td colspan="4">
+                            <table  class="table table-bordered">
+                                <tr>
+                                    <td class="text-capitalize">{ _t('category') }</td>
+                                    <td class="text-capitalize">{ _t('action') }</td>
+                                    <td class="text-capitalize">{ _t('behavior') }</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">{ data.categoria }</td>                                    
+                                    <td class="text-bold">{ data.escolheopcao }</td>
+                                    <td class="text-bold">{ data.partecorpo }</td>
+                                </tr>                                
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="text-capitalize">{ _t('frequency_offence') }</td>
                         <td class="text-bold">{ data.qtdvezes }</td>
                         <td class="text-capitalize">{ _t('last_date_harassment') }</td>
@@ -202,7 +218,7 @@
                         <td class="text-capitalize">{ _t('identification_witness') }</td>
                         <td class="text-bold">{ data.testemunhadoassedio }</td>
                         <td class="text-capitalize">{ _t('existence_evidence') }</td>
-                        <td class="text-bold">{ data.evidencia }</td>
+                        <td class="text-bold"">{ data.evidencia }</td>
                     </tr>
                     <tr>
                         <td class="text-capitalize">{ _t('evidence_delivered') }</td>

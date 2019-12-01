@@ -93,7 +93,7 @@
                         <div class="column col-4 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('name_complainant') }</label>
-                                <span>{ data.username }</span>
+                                <span>{ data.nomevitima }</span>
                             </div>
                         </div>
                         <div class="column col-4 col-md-12">
@@ -339,18 +339,20 @@
                                 <span>{ data.testemunhadoassedio }</span>
                             </div>
                         </div>
-                        <div class="column col-4 col-md-12">
+                    </div>
+                    <div class="columns">
+                        <div class="column col-12 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('existence_evidence') }</label>
-                                <span>{ data.evidencia }</span>
+                                <a href="{ data.evidencia }" target="_blank">{ data.evidencia }</a>
                             </div>
                         </div>
                     </div>
                     <div class="columns">
-                        <div class="column col-4 col-md-12">
+                        <div class="column col-12 col-md-12">
                             <div class="form-group">
                                 <label class="form-label text-capitalize">{ _t('delivery_method') }</label>
-                                <span>{ data.gravamedia }</span>
+                                <a href="{ data.gravamedia }" target="_blank">{ data.gravamedia }</a>
                             </div>
                         </div>
                     </div>

@@ -118,5 +118,8 @@
     "bullying": "intimidação por parte do inquirido",	
     "threats": "ameaças de retaliação",	
     "fear": "medo por parte da vítima/queixoso",	
-    "hostile_work": "ambiente de trabalho hostil"
+    "hostile_work": "ambiente de trabalho hostil",
+    "category": "category",
+    "action": "action",
+    "behavior": "behavior"
 }
