@@ -1,30 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rosa Bot</title>
-    <meta name="description" content="Rosa Bot">
-    <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#317EFB">
-    <link rel="icon" type="image/png" href="/img/logo-min.jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Intelligence — Calm AI for Serious Teams</title>
+  <meta name="description" content="A premium, modern AI platform landing page with calm aesthetics and responsive layout." />
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #151515;
+      --muted: #5f5f5f;
+      --line: #dcdcd8;
+      --accent-a: #d9e8ff;
+      --accent-b: #f2e9ff;
+      --shadow: 0 10px 30px rgba(16, 16, 16, 0.08);
+      --radius: 20px;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 48px;
+      --space-7: 64px;
+      --space-8: 80px;
+      --space-9: 96px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site {
+      overflow: clip;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2 * var(--space-3)));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: var(--space-8) 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: var(--space-2);
+      color: #4f4f4f;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 4.9rem);
+      max-width: 14ch;
+      margin-bottom: var(--space-3);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      margin-bottom: var(--space-2);
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      margin-bottom: var(--space-2);
+    }
+
+    p {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.12rem);
+      max-width: 60ch;
+    }
+
+    .topbar {
+      padding: var(--space-3) 0;
+    }
+
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-links {
+      display: none;
+      gap: var(--space-3);
+    }
+
+    .nav-links a {
+      color: #484848;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: var(--space-8) 0 var(--space-9);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 10% -20% auto;
+      height: 380px;
+      background: radial-gradient(circle at 20% 30%, var(--accent-a), transparent 55%),
+        radial-gradient(circle at 80% 20%, var(--accent-b), transparent 50%),
+        radial-gradient(circle at 60% 90%, #e5f3eb, transparent 45%);
+      filter: blur(8px);
+      opacity: 0.9;
+      z-index: -1;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(24px) scale(1.04); }
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: var(--space-5);
+      align-items: end;
+    }
+
+    .hero-copy p {
+      margin-bottom: var(--space-4);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: #101010;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(16, 16, 16, 0.16);
+    }
+
+    .btn-secondary {
+      color: #121212;
+      border-color: #1e1e1e;
+      background: transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(16, 16, 16, 0.14);
+    }
+
+    .stats {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: var(--space-1);
+      color: #0f0f0f;
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid #ededeb;
+      border-radius: 18px;
+      padding: var(--space-4);
+      box-shadow: 0 4px 18px rgba(20, 20, 20, 0.04);
+    }
+
+    .split {
+      display: grid;
+      gap: var(--space-4);
+      align-items: center;
+      margin-top: var(--space-8);
+    }
+
+    .visual {
+      min-height: 280px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #e7eeff, #f4ecff 45%, #e9f7ef);
+      border: 1px solid #ececec;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual::before,
+    .visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .visual::before {
+      width: 170px;
+      height: 170px;
+      top: -30px;
+      right: -25px;
+    }
+
+    .visual::after {
+      width: 120px;
+      height: 120px;
+      bottom: 30px;
+      left: -20px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+    }
+
+    .price-card {
+      background: var(--surface);
+      border-radius: 18px;
+      border: 1px solid #e7e7e5;
+      padding: var(--space-4);
+      box-shadow: 0 8px 24px rgba(15, 15, 15, 0.05);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(16, 16, 16, 0.12);
+    }
+
+    .price-card.recommended {
+      border-color: #171717;
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: #121212;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: var(--space-3) 0 var(--space-2);
+      letter-spacing: -0.03em;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: #5c5c5c;
+      font-weight: 500;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-top: var(--space-3);
+      display: grid;
+      gap: var(--space-2);
+      color: #4d4d4d;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid #e4e4e1;
+      padding: var(--space-5) 0;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      font-size: 0.88rem;
+      color: #767676;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #777;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        width: min(1120px, calc(100% - 2 * var(--space-5)));
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.25fr 0.9fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .split {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-6);
+      }
+
+      .split.alt .copy {
+        order: 2;
+      }
+
+      .split.alt .visual {
+        order: 1;
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="site">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="#">Nova Intelligence</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#platform">Platform</a>
+          <a href="#pricing">Pricing</a>
+        </nav>
+      </div>
+    </header>
 
-    <div class="container">
-        <menu></menu>
-        <div id="view">
-            <div class="loading loading-lg"></div>
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">Trusted by modern teams</span>
+            <h1>Intelligence infrastructure for thoughtful decisions.</h1>
+            <p>Nova helps leaders and operators reason faster with safe, deeply contextual AI that feels calm, reliable, and fully aligned with your standards.</p>
+            <div class="button-row">
+              <a href="#pricing" class="btn btn-primary">Start free</a>
+              <a href="#platform" class="btn btn-secondary">Explore platform</a>
+            </div>
+          </div>
+          <aside class="stats reveal" aria-label="Key metrics">
+            <div class="stat">
+              <strong>99.98%</strong>
+              <p>Platform uptime for mission-critical workflows.</p>
+            </div>
+            <div class="stat">
+              <strong>42%</strong>
+              <p>Average reduction in analysis cycle time.</p>
+            </div>
+            <div class="stat">
+              <strong>120+</strong>
+              <p>Enterprise teams deployed globally.</p>
+            </div>
+            <div class="stat">
+              <strong>24/7</strong>
+              <p>Operational support with human oversight.</p>
+            </div>
+          </aside>
         </div>
-    </div>
+      </section>
 
-    <script src="/js/libs.min.js"></script>
-    <script src="/js/scripts.min.js"></script>
-    <script src="/tags/pagination.js"></script>
+      <section id="features" class="section">
+        <div class="container">
+          <span class="eyebrow reveal">Core capabilities</span>
+          <h2 class="reveal">Designed for precision, safety, and speed.</h2>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <h3>Deep context memory</h3>
+              <p>Unify documents, conversations, and structured data into one living workspace for continuous reasoning.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Policy-aware outputs</h3>
+              <p>Guardrails, approvals, and traceable decisions built in so every answer is auditable and production-ready.</p>
+            </article>
+            <article class="feature-card reveal">
+              <h3>Human-in-the-loop orchestration</h3>
+              <p>Blend automation and expert review with configurable workflows that adapt to your real operating model.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" class="section">
+        <div class="container">
+          <div class="split">
+            <div class="copy reveal">
+              <span class="eyebrow">Reasoning workspace</span>
+              <h2>From signal to strategy in minutes.</h2>
+              <p>Build decision-ready briefs instantly with intelligent synthesis that highlights assumptions, trade-offs, and confidence scores.</p>
+            </div>
+            <div class="visual reveal" aria-hidden="true"></div>
+          </div>
+
+          <div class="split alt">
+            <div class="copy reveal">
+              <span class="eyebrow">Enterprise controls</span>
+              <h2>Security and governance at every layer.</h2>
+              <p>Role-based access, regional data controls, and transparent model logs give your compliance teams full visibility.</p>
+            </div>
+            <div class="visual reveal" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section">
+        <div class="container">
+          <span class="eyebrow reveal">Pricing</span>
+          <h2 class="reveal">Flexible plans for every stage.</h2>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <h3>Starter</h3>
+              <p class="price">$29 <span>/seat</span></p>
+              <p>For early teams testing structured AI workflows.</p>
+              <ul>
+                <li>Up to 25K reasoning credits</li>
+                <li>Core integrations</li>
+                <li>Email support</li>
+              </ul>
+            </article>
+
+            <article class="price-card recommended reveal">
+              <span class="badge">Recommended</span>
+              <h3>Growth</h3>
+              <p class="price">$79 <span>/seat</span></p>
+              <p>For scaling organizations with cross-functional use cases.</p>
+              <ul>
+                <li>Unlimited projects</li>
+                <li>Advanced governance tools</li>
+                <li>Priority support</li>
+              </ul>
+            </article>
+
+            <article class="price-card reveal">
+              <h3>Enterprise</h3>
+              <p class="price">Custom</p>
+              <p>For regulated environments and global operations.</p>
+              <ul>
+                <li>Private deployment options</li>
+                <li>Dedicated success architect</li>
+                <li>24/7 critical response SLA</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <p>© 2026 Nova Intelligence</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+          <a href="#">Status</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
 </body>
-
 </html>
